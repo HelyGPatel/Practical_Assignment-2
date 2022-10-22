@@ -1,0 +1,34 @@
+<div class="row">    
+        <h2 class="col-md-12 text-center">Student List</h2>   
+</div>
+<div class="row">       
+   <table class="table table-striped" >
+        <thead >
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Edit | Delete </th>
+          
+        </thead>
+        <tbody>
+                <tr *ngFor="let student of students">
+                    <td>
+                        {{student.first_name}}
+                    </td>
+                    <td>
+                        {{student.last_name}}
+                    </td>
+                    <td>
+                        {{student.email}}
+                    </td>
+                    <td><a [routerLink]="['/edit-student',student._id]" class="btn btn-success">Edit</a>
+                         | <button (click)="ondelete(student)" class="btn btn-danger">Delete</button></td>
+                    <!-- <td><a [routerLink]="['/book/edit', student._id]" class="btn btn-primary">Edit</a></td> -->
+                    <!-- <td><a (click) = "deleteBook(book._id)"  class="btn btn-danger">Delete</a></td> -->
+                </tr>
+        </tbody>
+   </table>
+</div>
+
+
+
